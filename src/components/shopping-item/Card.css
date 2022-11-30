@@ -1,0 +1,33 @@
+.card {
+    display: flex;
+    justify-content: center;
+}
+
+.image-border {
+    margin-right: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.item {
+    padding: 10px;
+    background: white;
+    border-radius: 10px;
+    border: solid 1px black;
+    margin: 1rem;
+    font-size: 24px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.no-under-line {
+    text-decoration: none;
+    color: black;
+    user-focus-pointer: none;
+}
+
+.no-under-line:hover {
+    text-decoration: none;
+    color: black;
+}
