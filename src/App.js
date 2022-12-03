@@ -7,7 +7,7 @@ import Oil from "./assets/oil.jpeg";
 import SecondOil from "./assets/secondOil.jpeg";
 import Eggs from "./assets/eggs.jpeg";
 import SecondEggs from "./assets/secondEggs.jpeg";
-import React from "react";
+import React, {useState} from "react";
 import {Route, BrowserRouter} from "react-router-dom";
 import Details from "./components/details/details";
 import {Routes} from "react-router";
@@ -16,7 +16,8 @@ import Cart from "./components/cart/Cart";
 import GroceryStore from "./components/grocery-store/GroceryStore";
 
 function App() {
-    const groceries = [
+
+    const  [cartGroceries, setCartGroceries] = useState( [
         {
             id: 1,
             name: 'Milk',
@@ -57,6 +58,45 @@ function App() {
             description: 'eggs eggs eggs',
             amount: 2
         },
+    ]);
+
+    const storeGroceries = [
+        {
+            id: 1,
+            name: 'Milk',
+            img: Milk,
+            price: 6.23,
+            store: 'Shufersal',
+            secondImg: SecondMilk,
+            description: 'milk milk milk',
+        },
+        {
+            id: 2,
+            name: 'Flour',
+            img: Flour,
+            price: 4.50,
+            store: 'Rami Levi',
+            secondImg: SecondFlour,
+            description: 'flour flour flour',
+        },
+        {
+            id: 3,
+            name: 'Oil',
+            img: Oil,
+            price: 15.90,
+            store: 'Shufersal',
+            secondImg: SecondOil,
+            description: 'oil oil oil',
+        },
+        {
+            id: 4,
+            name: 'Eggs',
+            img: Eggs,
+            price: 22.40,
+            store: 'Mega',
+            secondImg: SecondEggs,
+            description: 'eggs eggs eggs',
+        },
     ];
 
     return (
@@ -64,10 +104,10 @@ function App() {
         <div className="App">
             <BrowserRouter>
                 <Routes>
-                    <Route path="/cart" element={<Cart groceries={groceries}/>}/>
-                    <Route path="/grocery-store" element={<GroceryStore groceries={groceries}/>}/>
-                    <Route path="/" element={<GroceryStore groceries={groceries}/>}/>
-                    <Route path="details/:id" element={<Details groceries={groceries}/>}/>
+                    <Route path="/cart" element={<Cart groceries={cartGroceries} setCartGroceries={setCartGroceries}/>}/>
+                    <Route path="/grocery-store" element={<GroceryStore groceries={storeGroceries} cartGroceries={cartGroceries}/>}/>
+                    <Route path="/" element={<GroceryStore groceries={storeGroceries} cartGroceries={cartGroceries}/>}/>
+                    <Route path="details/:id" element={<Details groceries={storeGroceries}/>}/>
                 </Routes>
             </BrowserRouter>
 

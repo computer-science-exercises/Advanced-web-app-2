@@ -24,7 +24,7 @@ const Card = (props) => {
                     <button
                         class="btn btn-primary"
                         onClick={increaseAmount}
-                    >+
+                    >+ 66
                     </button>
                     <h6 class="p-1 pt-2">
                         {amount}

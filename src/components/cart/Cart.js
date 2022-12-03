@@ -6,7 +6,7 @@ const Cart = (props) => {
     return (
         <div>
             <CartHeader groceries={props.groceries}/>
-            <CartItems groceries={props.groceries}/>
+            <CartItems groceries={props.groceries} setCartGroceries={props.setCartGroceries}/>
         </div>
     );
 };
