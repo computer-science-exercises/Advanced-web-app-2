@@ -16,10 +16,34 @@ const GroceryStore = (props) => {
             {props.groceries.map(grocery => (
                 <div className="d-flex flex-column justify-content-center">
                     <Card grocery={grocery} isCart={false}/>
+                    <div>
+                        <button className="btn btn-primary"
+                                onClick={event => {
+                                    addItemToCart(props.setCartGroceries, grocery, props.cartGroceries)
+                                }}
+                        >Add to cart
+                        </button>
+                    </div>
                 </div>
             ))}
         </div>
     );
+};
+
+const addItemToCart = (setCartGroceries, groceryToAdd, cartGroceries) => {
+    if (!cartGroceries.find(g => g.id === groceryToAdd.id)){
+        console.log("here")
+        setCartGroceries([...cartGroceries,  {
+            id: groceryToAdd.id,
+            name: groceryToAdd.name,
+            img: groceryToAdd.img,
+            price: groceryToAdd.price,
+            store: groceryToAdd.store,
+            secondImg: groceryToAdd.secondImg,
+            description: groceryToAdd.description,
+            amount: 1
+        }])
+    }
 };
 
 export default GroceryStore;

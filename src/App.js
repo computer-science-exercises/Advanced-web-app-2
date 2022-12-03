@@ -17,48 +17,7 @@ import GroceryStore from "./components/grocery-store/GroceryStore";
 
 function App() {
 
-    const  [cartGroceries, setCartGroceries] = useState( [
-        {
-            id: 1,
-            name: 'Milk',
-            img: Milk,
-            price: 6.23,
-            store: 'Shufersal',
-            secondImg: SecondMilk,
-            description: 'milk milk milk',
-            amount: 8
-        },
-        {
-            id: 2,
-            name: 'Flour',
-            img: Flour,
-            price: 4.50,
-            store: 'Rami Levi',
-            secondImg: SecondFlour,
-            description: 'flour flour flour',
-            amount: 4
-        },
-        {
-            id: 3,
-            name: 'Oil',
-            img: Oil,
-            price: 15.90,
-            store: 'Shufersal',
-            secondImg: SecondOil,
-            description: 'oil oil oil',
-            amount: 8
-        },
-        {
-            id: 4,
-            name: 'Eggs',
-            img: Eggs,
-            price: 22.40,
-            store: 'Mega',
-            secondImg: SecondEggs,
-            description: 'eggs eggs eggs',
-            amount: 2
-        },
-    ]);
+    const  [cartGroceries, setCartGroceries] = useState( []);
 
     const storeGroceries = [
         {
@@ -105,8 +64,8 @@ function App() {
             <BrowserRouter>
                 <Routes>
                     <Route path="/cart" element={<Cart groceries={cartGroceries} setCartGroceries={setCartGroceries}/>}/>
-                    <Route path="/grocery-store" element={<GroceryStore groceries={storeGroceries} cartGroceries={cartGroceries}/>}/>
-                    <Route path="/" element={<GroceryStore groceries={storeGroceries} cartGroceries={cartGroceries}/>}/>
+                    <Route path="/grocery-store" element={<GroceryStore groceries={storeGroceries} cartGroceries={cartGroceries}  setCartGroceries={setCartGroceries}/>}/>
+                    <Route path="/" element={<GroceryStore groceries={storeGroceries} cartGroceries={cartGroceries} setCartGroceries={setCartGroceries}/>}/>
                     <Route path="details/:id" element={<Details groceries={storeGroceries}/>}/>
                 </Routes>
             </BrowserRouter>

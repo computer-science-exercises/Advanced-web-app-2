@@ -4,8 +4,6 @@ import './Card.css';
 import {Link} from "react-router-dom";
 
 const Card = (props) => {
-    const [amount, setAmount] = useState(props.grocery.amount);
-
     return (
         <div class="align-self-center">
             <Link class="no-under-line" to={"/details/" + props.grocery.id}>
@@ -19,35 +17,8 @@ const Card = (props) => {
                     </div>
                 </div>
             </Link>
-            {props.isCart ?
-                <div class="d-flex justify-content-center">
-                    <button
-                        class="btn btn-primary"
-                        onClick={increaseAmount}
-                    >+ 66
-                    </button>
-                    <h6 class="p-1 pt-2">
-                        {amount}
-                    </h6>
-                    <button
-                        class="btn btn-primary"
-                        onClick={decreaseAmount}
-                    >-
-                    </button>
-                </div> :
-                <div>
-                    <button class="btn btn-primary">Add to cart</button>
-                </div>}
         </div>
     );
-
-    function decreaseAmount() {
-        setAmount(amount - 1)
-    }
-
-    function increaseAmount() {
-        setAmount(amount + 1)
-    }
 };
 
 export default Card;
