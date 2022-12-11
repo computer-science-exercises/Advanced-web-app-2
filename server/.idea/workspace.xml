@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5a8cbd56-3ca0-47c0-9666-ba307d1408dc" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="2IjaTHXw56LFQDm4GcU6NSIyMq5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/models" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Abraham\WebstormProjects\nodefolder\models" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5a8cbd56-3ca0-47c0-9666-ba307d1408dc" name="Default Changelist" comment="" />
+      <created>1670697453046</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1670697453046</updated>
+      <workItem from="1670697454546" duration="24096000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="294" y="110" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1670698440913">
+      <screen x="0" y="0" width="1093" height="614" />
+    </state>
+    <state x="294" y="110" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1093.614@0.0.1093.614" timestamp="1670698440913" />
+    <state x="327" y="63" key="FileChooserDialogImpl" timestamp="1670709533786">
+      <screen x="0" y="0" width="1093" height="614" />
+    </state>
+    <state x="327" y="63" key="FileChooserDialogImpl/0.0.1093.614@0.0.1093.614" timestamp="1670709533786" />
+    <state x="257" y="40" width="578" height="534" key="find.popup" timestamp="1670724003791">
+      <screen x="0" y="0" width="1093" height="614" />
+    </state>
+    <state x="257" y="40" width="578" height="534" key="find.popup/0.0.1093.614@0.0.1093.614" timestamp="1670724003791" />
+  </component>
+</project>
