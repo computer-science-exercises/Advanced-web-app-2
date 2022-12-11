@@ -1,16 +1,12 @@
-import React, {useState} from "react";
+import React from "react";
 import Card from "../../shopping-item/Card";
-import Eggs from "../../../assets/eggs.jpeg";
-import SecondEggs from "../../../assets/secondEggs.jpeg";
 
 const CartItems = (props) => {
 
-    // const [amount, setAmount] = useState(props.grocery.amount);
-
     return (
-        <div class="w-100">
+        <div className="w-100">
             {props.groceries.map(grocery => (
-                <div class="d-flex flex-column justify-content-center">
+                <div key={grocery.id} className="d-flex flex-column justify-content-center">
                     <Card grocery={grocery} isCart={true}/>
                     <div className="d-flex justify-content-center">
                         <button
