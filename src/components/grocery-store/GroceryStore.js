@@ -1,7 +1,8 @@
 import React from "react";
 import Card from "../shopping-item/Card";
 import cartIcon from "../../assets/cart-icon.svg";
-import {Link} from "react-router-dom"
+import {Link} from "react-router-dom";
+import swal from 'sweetalert';
 
 const GroceryStore = (props) => {
     return (
@@ -32,7 +33,6 @@ const GroceryStore = (props) => {
 
 const addItemToCart = (setCartGroceries, groceryToAdd, cartGroceries) => {
     if (!cartGroceries.find(g => g.id === groceryToAdd.id)){
-        console.log("here")
         setCartGroceries([...cartGroceries,  {
             id: groceryToAdd.id,
             name: groceryToAdd.name,
@@ -43,6 +43,22 @@ const addItemToCart = (setCartGroceries, groceryToAdd, cartGroceries) => {
             description: groceryToAdd.description,
             amount: 1
         }])
+        swal({
+            title: "Done!",
+            text: "Added " + groceryToAdd.name + " to cart ",
+            icon: "success",
+            timer: 2000,
+            button: false
+        })
+    }else {
+
+        swal({
+            title: "Sorry!",
+            text: groceryToAdd.name + " is already in cart",
+            icon: "error",
+            timer: 2000,
+            button: false
+        })
     }
 };
 
