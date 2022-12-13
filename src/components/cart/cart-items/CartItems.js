@@ -1,5 +1,8 @@
 import React from "react";
 import Card from "../../shopping-item/Card";
+import closedTrashIcon from '../../../assets/closed-trash.svg';
+import openTrashIcon from '../../../assets/open-trash.svg';
+
 
 const CartItems = (props) => {
 
@@ -26,6 +29,15 @@ const CartItems = (props) => {
                             }}
                         >-
                         </button>
+                        <button
+                            className="btn btn-primary ms-2 p-0"
+                            onClick={event => {
+                                removeFromCart(props.setCartGroceries, grocery.id, props.groceries)
+                            }}
+                        ><img src={closedTrashIcon}
+                        onMouseOver={e => (e.currentTarget.src = openTrashIcon)}
+                        onMouseOut={e => (e.currentTarget.src = closedTrashIcon)}/>
+                        </button>
                     </div>
                 </div>
             ))}
@@ -41,9 +53,13 @@ const increaseAmount = (setGroceries, id, groceries) => {
     updatedGroceryAmount(setGroceries, id, groceries, 1)
 };
 
+const removeFromCart = (setGroceries, id, groceries) => {
+    setGroceries(groceries.filter (grocery => grocery.id !== id));
+}
+
 function updatedGroceryAmount(setGroceries, id, groceries, difference){
+    groceries = groceries.filter(g => !(g.id === id && (g.amount + difference) === 0))
     setGroceries(
-        groceries.filter(g => !(g.id === id && (g.amount + difference) === 0)) &&
         groceries.map(g => {
             if (g.id === id && !(difference === -1 && g.amount < 1)){
                 return {
