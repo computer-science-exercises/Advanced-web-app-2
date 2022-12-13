@@ -43,6 +43,7 @@ const increaseAmount = (setGroceries, id, groceries) => {
 
 function updatedGroceryAmount(setGroceries, id, groceries, difference){
     setGroceries(
+        groceries.filter(g => !(g.id === id && (g.amount + difference) === 0)) &&
         groceries.map(g => {
             if (g.id === id && !(difference === -1 && g.amount < 1)){
                 return {
@@ -55,7 +56,8 @@ function updatedGroceryAmount(setGroceries, id, groceries, difference){
                     description: g.description,
                     amount: g.amount + difference
                 }
-            } else {
+            } 
+            else {
                 return g;
             }
         }))
