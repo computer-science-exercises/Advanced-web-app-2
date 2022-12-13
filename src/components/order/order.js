@@ -58,6 +58,7 @@ const Order = (props) => {
                 timer: 2000,
                 button: false
             })
+            props.setCartGroceries([]);
         }).catch(() => {
             swal({
                 title: "Sorry!",

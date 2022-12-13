@@ -30,7 +30,7 @@ function App() {
                     <Route path="/" element={<GroceryStore groceries={storeGroceries} cartGroceries={cartGroceries}
                                                            setCartGroceries={setCartGroceries}/>}/>
                     <Route path="details/:id" element={<Details groceries={storeGroceries}/>}/>
-                    <Route path="/order" element={<Order groceries={cartGroceries}/>}/>
+                    <Route path="/order" element={<Order groceries={cartGroceries} setCartGroceries={setCartGroceries}/>}/>
                 </Routes>
             </BrowserRouter>
 
