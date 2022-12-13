@@ -7,7 +7,7 @@ import swal from 'sweetalert';
 const GroceryStore = (props) => {
     return (
         <div className="w-100">
-            <div class="position-fixed mt-5 mx-5">
+            <div className="position-fixed mt-5 mx-5">
                 <div class="position-absolute mx-5 top-0 start-0 translate-middle">
                     <Link to={"/cart"}>
                         <img src={cartIcon}/>

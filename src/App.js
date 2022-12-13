@@ -2,7 +2,7 @@ import './App.css';
 import React, {useEffect, useState} from "react";
 import {Route, BrowserRouter} from "react-router-dom";
 import Details from "./components/details/details";
-import Profile from "./components/profile/profile";
+import Order from "./components/order/order";
 import {Routes} from "react-router";
 import Cart from "./components/cart/Cart";
 import GroceryStore from "./components/grocery-store/GroceryStore";
@@ -15,11 +15,6 @@ function App() {
     useEffect(() => {
             HttpService.getAllStoreProducts().then(res => {
                     setStoreGroceries(res.data)
-                }
-            )
-
-            HttpService.getAllCartProducts().then(r => {
-                    setCartGroceries(r.data.products)
                 }
             )
         }, [false]
@@ -35,7 +30,7 @@ function App() {
                     <Route path="/" element={<GroceryStore groceries={storeGroceries} cartGroceries={cartGroceries}
                                                            setCartGroceries={setCartGroceries}/>}/>
                     <Route path="details/:id" element={<Details groceries={storeGroceries}/>}/>
-                    <Route path="/profile" element={<Profile/>}/>
+                    <Route path="/order" element={<Order groceries={cartGroceries}/>}/>
                 </Routes>
             </BrowserRouter>
 

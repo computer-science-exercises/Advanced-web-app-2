@@ -5,7 +5,6 @@ import openTrashIcon from '../../../assets/open-trash.svg';
 
 
 const CartItems = (props) => {
-
     return (
         <div className="w-100">
             {props.groceries.map(grocery => (

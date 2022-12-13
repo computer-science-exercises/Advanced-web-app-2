@@ -1,6 +1,5 @@
 const Product = require("../models/product");
-const CartProduct = require("../models/cartProduct");
-const User = require("../models/user");
+const Order = require("../models/order");
 
 const getAllStoreProducts = (req, res) => {
     addHeaders(res)
@@ -13,61 +12,18 @@ const getAllStoreProducts = (req, res) => {
     })
 }
 
-const getAllCartProducts = (req, res) => {
-    addHeaders(res)
-
-    CartProduct.findOne({userId: req.body.userId}).then((response) => {
-            res.send(response)
-        }
-    ).catch((e) => {
-        console.log(`there was a problem...${e.message}`)
-    })
-}
-
-const updateCartProducts = (req, res) => {
-    CartProduct.findOneAndUpdate(
-        {userId: req.body.userId},
+const createOrder = (req, res) => {
+    Order.create(
         {
-            userId: req.body.userId,
+            user: req.body.user,
             products: req.body.products
-        },
-        {new: true, upsert: true}
+        }
     ).then(()=>
     {
         res.send()
     }).catch((e) => {
                 console.log(`there was a problem...${e}`)
     });
-}
-
-const getUserById = (req, res) => {
-    addHeaders(res)
-
-    User.findOne({id: req.body.id}).then((response) => {
-            res.send(response)
-        }
-    ).catch((e) => {
-        console.log(`there was a problem...${e.message}`)
-    })
-}
-
-const updateUser = (req, res) => {
-    let user = req.body;
-
-    User.findOneAndUpdate({id: req.body.id},
-        {
-            id: user.id,
-            name: user.name,
-            mail: user.mail,
-            phoneNumber: user.phoneNumber
-        },
-        {new: true, upsert: true}
-    ).then((response) => {
-            res.send()
-        }
-    ).catch((e) => {
-        console.log(`there was a problem...${e.message}`)
-    })
 }
 
 function addHeaders(res) {
@@ -81,8 +37,5 @@ function addHeaders(res) {
 
 module.exports = {
     getAllStoreProducts,
-    getAllCartProducts,
-    updateCartProducts,
-    getUserById,
-    updateUser
+    createOrder
 }
